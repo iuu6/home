@@ -13,15 +13,12 @@ on:
     branches:
       - main
 
-
-
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
@@ -29,11 +26,10 @@ jobs:
           outputs: |
             ./static/svg/snake-Light.svg
             ./static/svg/snake-Dark.svg
-      # push the content of <build_dir> to a branch
-      # the content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file> , or as github page
+
       - name: Push to GitHub
         uses: EndBug/add-and-commit@v9.1.4
         with:
+          message: 'Generate Contribution Snake'      
           add: '*.svg --force'
           cwd: './static/svg'
-          message: 'Generate Contribution Snake'      
