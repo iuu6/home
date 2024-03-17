@@ -34,11 +34,6 @@ jobs:
       - name: Push to GitHub
         uses: EndBug/add-and-commit@v9.1.4
         with:
-          remove: |
-            ./static/svg/snake-Light.svg
-            ./static/svg/snake-Dark.svg
-          add: |
-            ./static/svg/snake-Light.svg
-            ./static/svg/snake-Dark.svg
+          add: '*.svg --force'
           cwd: './static/svg'
           message: 'Generate Contribution Snake'      
