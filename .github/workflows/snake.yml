@@ -34,4 +34,3 @@ jobs:
         with:
           message: 'Generate Contribution Snake'      
           add: '*.svg --force'
-          cwd: './static/svg'
