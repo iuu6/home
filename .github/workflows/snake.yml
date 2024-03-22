@@ -4,14 +4,11 @@ permissions:
   contents: write
 
 on:
-  # run automatically every 12 hours
   schedule:
     - cron: "0 2 * * *"
 
-  # allows to manually run the job at any time
   workflow_dispatch:
 
-  # run on every push on the main branch
   push:
     branches:
       - main
