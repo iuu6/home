@@ -38,7 +38,7 @@ function getBingImages(imgUrls) {
 	var panel = document.querySelector('#panel');
 	if (isNaN(index) || index == 7) index = 0;
 	else index++;
-	var imgUrl = imgUrls[index];
+	var imgUrl = "/th?id=OHR.PenguinDirections_EN-US5469437415_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp";
 	var url = "https://www.cn.bing.com" + imgUrl;
 	panel.style.background = "url('" + url + "') center center no-repeat #666";
 	panel.style.backgroundSize = "cover";
