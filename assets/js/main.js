@@ -27,23 +27,17 @@ var iUp = (function () {
 	};
 })();
 
-function getBingImages(imgUrls) {
-	/**
-	 * 获取Bing壁纸
-	 * 先使用 GitHub Action 每天获取 Bing 壁纸 URL 并更新 images.json 文件
-	 * 然后读取 images.json 文件中的数据
-	 */
-	var indexName = "bing-image-index";
-	var index = sessionStorage.getItem(indexName);
+function getBingImages() {
 	var panel = document.querySelector('#panel');
-	if (isNaN(index) || index == 7) index = 0;
-	else index++;
-	var imgUrl = "/th?id=OHR.PenguinDirections_EN-US5469437415_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp";
-	var url = "https://www.cn.bing.com" + imgUrl;
+	var url = "https://api.aixiaowai.cn/gqapi/gqapi.php";
 	panel.style.background = "url('" + url + "') center center no-repeat #666";
 	panel.style.backgroundSize = "cover";
-	sessionStorage.setItem(indexName, index);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    getBingImages(); 
+});
+
 
 function decryptEmail(encoded) {
 	var address = atob(encoded);
